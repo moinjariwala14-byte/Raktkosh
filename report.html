@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Report - Red Cross Society</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 20mm 20mm 20mm;
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #111;
+    line-height: 1.5;
+    font-size: 11pt;
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    page-break-after: always;
+    box-sizing: border-box;
+    min-height: 920px;
+    position: relative;
+  }
+  .center {
+    text-align: center;
+  }
+  .title-main {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-top: 40px;
+    color: #900;
+  }
+  .subtitle {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-top: 15px;
+    line-height: 1.4;
+  }
+  .meta-box {
+    margin-top: 50px;
+    font-size: 12pt;
+    line-height: 1.8;
+  }
+  h1 { font-size: 16pt; font-weight: bold; color: #900; border-bottom: 2px solid #900; padding-bottom: 4px; margin-top: 0; }
+  h2 { font-size: 13pt; font-weight: bold; margin-top: 15px; color: #222; }
+  h3 { font-size: 11.5pt; font-weight: bold; margin-top: 10px; color: #333; }
+  p, li {
+    text-align: justify;
+    font-size: 10.5pt;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 9.5pt;
+  }
+  table, th, td {
+    border: 1px solid #444;
+  }
+  th {
+    background-color: #f2f2f2;
+    padding: 6px 8px;
+    font-weight: bold;
+    text-align: left;
+  }
+  td {
+    padding: 5px 8px;
+    vertical-align: top;
+  }
+  pre {
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 8pt;
+    white-space: pre-wrap;
+    border-radius: 4px;
+    margin-top: 8px;
+    line-height: 1.25;
+  }
+  .signature-table {
+    width: 100%;
+    margin-top: 80px;
+    border: none;
+  }
+  .signature-table td {
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 40px;
+  }
+  .card {
+    border: 1px solid #777;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    background: #fafafa;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: TITLE PAGE -->
+<div class="page center">
+  <br><br>
+  <div class="title-main">A PROJECT REPORT ON<br>"RED CROSS SOCIETY — BLOOD DONATION MANAGEMENT SYSTEM"</div>
+  <div class="subtitle">
+    SUBMITTED IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE 5TH SEMESTER OF<br>
+    BACHELOR OF COMPUTER APPLICATIONS (B.C.A.)
+  </div>
+  <br>
+  <p><strong>SUBJECT: WEB FRAMEWORKS & SERVICES (WFS)</strong></p>
+  
+  <div class="meta-box">
+    <strong>SUBMITTED BY:</strong><br>
+    [Your Full Name] (Exam Seat No: [Your Seat No])<br><br>
+    <strong>UNDER THE GUIDANCE OF:</strong><br>
+    [Project Guide Faculty Name]<br>
+    Assistant Professor, Department of Computer Applications<br><br>
+    <strong>SUBMITTED TO:</strong><br>
+    Department of Computer Applications<br>
+    College of Applied Science and Professional Studies, Chikhli<br>
+    [Affiliated to Veer Narmad South Gujarat University (VNSGU), Surat]<br><br>
+    <strong>ACADEMIC YEAR:</strong> 2026 – 2027
+  </div>
+</div>
+
+<!-- PAGE 2: CERTIFICATE -->
+<div class="page">
+  <div class="center">
+    <h2>COLLEGE OF APPLIED SCIENCE AND PROFESSIONAL STUDIES, CHIKHLI</h2>
+    <p>[Affiliated to Veer Narmad South Gujarat University (VNSGU), Surat]</p>
+    <br>
+    <h1>CERTIFICATE</h1>
+  </div>
+  <br><br>
+  <p style="font-size: 11pt; line-height: 2;">
+    This is to certify that <strong>Mr./Ms. [Your Full Name]</strong>, Exam Seat No: <strong>[Your Seat No]</strong>, student of <strong>B.C.A. 5th Semester</strong>, has successfully completed the project work entitled <strong>"RED CROSS SOCIETY — BLOOD DONATION MANAGEMENT SYSTEM"</strong> in the subject of <strong>Web Frameworks & Services (WFS)</strong> as part of the curriculum prescribed for the award of the degree of Bachelor of Computer Applications (B.C.A.) for the academic year 2026–2027.
+  </p>
+  <br>
+  <p><strong>Date:</strong> 13/10/2026<br><strong>Place:</strong> Chikhli / Navsari</p>
+  <br><br>
+  <table class="signature-table">
+    <tr>
+      <td>______________________<br>Project Guide</td>
+      <td>______________________<br>Head of Department</td>
+      <td>______________________<br>External Examiner</td>
+    </tr>
+  </table>
+</div>
+
+<!-- PAGE 3: DECLARATION -->
+<div class="page">
+  <div class="center">
+    <h1>DECLARATION</h1>
+  </div>
+  <br><br>
+  <p style="font-size: 11pt; line-height: 1.8;">
+    I, the undersigned, hereby declare that this project report entitled <strong>"RED CROSS SOCIETY — BLOOD DONATION MANAGEMENT SYSTEM"</strong> submitted in partial fulfillment of the requirements for the 5th Semester of Bachelor of Computer Applications (B.C.A.) is an authentic record of independent project work carried out by me under the supervision of my project guide.
+  </p>
+  <p style="font-size: 11pt; line-height: 1.8;">
+    The conceptual designs, application source code architecture, database schemas, and documentation presented in this report are original. Any external standard or technical reference utilized (such as the e-RaktKosh National Transfusion Guidelines) has been duly acknowledged.
+  </p>
+  <p style="font-size: 11pt; line-height: 1.8;">
+    I further declare that this report has not been submitted previously to any other university or institution for the award of any degree or diploma.
+  </p>
+  <br><br><br>
+  <p><strong>Date:</strong> 13/10/2026<br><strong>Place:</strong> Navsari</p>
+  <br><br>
+  <p style="text-align: right; font-weight: bold;">
+    __________________________<br>
+    [Your Full Name]<br>
+    (T.Y. B.C.A. - 5th Semester)
+  </p>
+</div>
+
+<!-- PAGE 4: ACKNOWLEDGEMENT -->
+<div class="page">
+  <div class="center">
+    <h1>ACKNOWLEDGEMENT</h1>
+  </div>
+  <br><br>
+  <p style="font-size: 11pt; line-height: 1.8;">
+    I express my sincere thanks to the almighty for providing me with the mental strength and perseverance required to complete this software project successfully.
+  </p>
+  <p style="font-size: 11pt; line-height: 1.8;">
+    I extend my gratitude to our respected <strong>Principal</strong> and our <strong>Head of Department (BCA)</strong> for providing institutional support, software lab infrastructure, and encouragement throughout the semester.
+  </p>
+  <p style="font-size: 11pt; line-height: 1.8;">
+    I express my deepest sense of gratitude to my <strong>Project Guide</strong> for invaluable technical guidance, constructive evaluation, and regular support throughout the implementation of Laravel MVC architecture, MySQL database design, and unit testing.
+  </p>
+  <p style="font-size: 11pt; line-height: 1.8;">
+    I also thank all faculty members of the Computer Science Department for their academic assistance, and my family and peers for their continuous moral support.
+  </p>
+  <br><br>
+  <p><strong>Date:</strong> 13/10/2026<br><strong>Place:</strong> Navsari</p>
+  <br><br>
+  <p style="text-align: right; font-weight: bold;">
+    __________________________<br>
+    [Your Full Name]<br>
+    (T.Y. B.C.A. - 5th Semester)
+  </p>
+</div>
+
+<!-- PAGE 5: INDEX -->
+<div class="page">
+  <div class="center">
+    <h1>INDEX</h1>
+  </div>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10%; text-align: center;">Sr. No.</th>
+        <th style="width: 75%;">Topic / Chapter Title</th>
+        <th style="width: 15%; text-align: center;">Page No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="center"><strong>1.</strong></td><td><strong>Introduction</strong></td><td class="center"><strong>6</strong></td></tr>
+      <tr><td></td><td>1.1 Existing System</td><td class="center">7</td></tr>
+      <tr><td></td><td>1.2 Limitations of the Existing System</td><td class="center">8</td></tr>
+      <tr><td class="center"><strong>2.</strong></td><td><strong>Proposed System</strong></td><td class="center"><strong>9</strong></td></tr>
+      <tr><td></td><td>2.1 Project Profile</td><td class="center">10</td></tr>
+      <tr><td></td><td>2.2 Objectives</td><td class="center">11</td></tr>
+      <tr><td></td><td>2.3 Hardware and Software Requirements</td><td class="center">12</td></tr>
+      <tr><td class="center"><strong>3.</strong></td><td><strong>System Design</strong></td><td class="center"><strong>13</strong></td></tr>
+      <tr><td></td><td>3.1 System Level Diagram (SLD)</td><td class="center">13</td></tr>
+      <tr><td></td><td>3.2 Data Flow Diagrams (Context, Level 1, Flowchart)</td><td class="center">14</td></tr>
+      <tr><td></td><td>3.3 Data Dictionary</td><td class="center">16</td></tr>
+      <tr><td></td><td>3.4 Database Table Structures (phpMyAdmin / MySQL Schema)</td><td class="center">19</td></tr>
+      <tr><td class="center"><strong>4.</strong></td><td><strong>Screen Layouts</strong></td><td class="center"><strong>23</strong></td></tr>
+      <tr><td></td><td>4.1 Navigation & Responsive Design</td><td class="center">23</td></tr>
+      <tr><td></td><td>4.2 Public Home Page Layout</td><td class="center">24</td></tr>
+      <tr><td></td><td>4.3 Live Stock Availability Directory</td><td class="center">25</td></tr>
+      <tr><td></td><td>4.4 Voluntary Donor Registration Interface</td><td class="center">26</td></tr>
+      <tr><td></td><td>4.5 Emergency Blood Requisition Form</td><td class="center">27</td></tr>
+      <tr><td></td><td>4.6 Officer Authentication Interface</td><td class="center">28</td></tr>
+      <tr><td></td><td>4.7 Central Admin Dashboard & Workflow Pipeline</td><td class="center">29</td></tr>
+      <tr><td class="center"><strong>5.</strong></td><td><strong>Future Enhancements</strong></td><td class="center"><strong>30</strong></td></tr>
+      <tr><td class="center"><strong>6.</strong></td><td><strong>References</strong></td><td class="center"><strong>31</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PAGE 6: INTRODUCTION -->
+<div class="page">
+  <h1>1. Introduction</h1>
+  <p>The <strong>Red Cross Society — Blood Donation Management System</strong> is an enterprise-oriented web application designed to manage, streamline, and centralize the operational workflow of regional blood banks, voluntary donor drives, and emergency transfusion requirements. Built on modern web architecture using PHP (Laravel Framework) and MySQL, the application draws its design principles directly from the national blood transfusion portal, <strong>e-RaktKosh</strong>.</p>
+  <p>In life-saving situations, locating verified, matching blood components (Whole Blood, PRBC, Platelet Concentrate, Fresh Frozen Plasma, and Cryoprecipitate) is time-critical. Traditional, localized blood registries rely on manual paper logging, unscheduled physical visits, and uncoordinated emergency calls. This lack of centralized visibility often leads to critical delays in patient care.</p>
+  <p>This system bridges that gap by offering a transparent, searchable, and secure public platform. The system supports three primary user roles:</p>
+  <ul>
+    <li><strong>Voluntary Donors:</strong> Can check their clinical donation intervals, locate upcoming blood donation camps, and register for digital donor certificates.</li>
+    <li><strong>Hospital Attendants & Emergency Recipients:</strong> Can check real-time regional stock and submit urgent patient requisitions directly to the central blood bank.</li>
+    <li><strong>Blood Bank Transfusion Officers (Admin):</strong> Can manage barcoded unit inventories, verify clinical physical screening vitals, and approve blood requests through a multi-stage clinical workflow.</li>
+  </ul>
+  <p>By applying Model-View-Controller (MVC) architectural separation and Role-Based Access Control (RBAC), the project delivers high performance, secure session management, and relational data integrity.</p>
+</div>
+
+<!-- PAGE 7: EXISTING SYSTEM -->
+<div class="page">
+  <h1>1.1 Existing System</h1>
+  <p>In traditional and paper-bound blood bank centers, operations rely heavily on manual recordkeeping and decentralized communication:</p>
+  <ul>
+    <li><strong>Manual Registry Logbooks:</strong> Blood units collected from donors are recorded by hand in physical paper registers. Staff must manually record donor contact information, collection dates, and component division logs.</li>
+    <li><strong>Physical Counter Enquiries:</strong> Family members and hospital attendants must visit individual blood banks or call multiple facilities to verify whether specific blood groups are available in stock.</li>
+    <li><strong>Paper-Based Pre-Donation Forms:</strong> Donors fill out physical medical intake forms to record preliminary physical checks (weight, hemoglobin, blood pressure, pulse). These paper records are prone to wear, physical misplacement, or accidental destruction over time.</li>
+    <li><strong>Uncoordinated Emergency Requests:</strong> When an emergency occurs at a hospital, physical requisition slips signed by doctors are carried between hospital departments and blood centers, resulting in administrative bottlenecks during acute emergencies.</li>
+  </ul>
+</div>
+
+<!-- PAGE 8: LIMITATIONS OF EXISTING SYSTEM -->
+<div class="page">
+  <h1>1.2 Limitations of the Existing System</h1>
+  <p>The manual blood management process presents several operational challenges for both medical staff and patients:</p>
+  <ol>
+    <li><strong>Time-Consuming & High Operational Latency:</strong> Manual ledger checks increase wait times for life-saving component transfusions.</li>
+    <li><strong>Absence of Centralized Inventory Visibility:</strong> Attendants cannot review regional multi-center inventory from a single interface.</li>
+    <li><strong>Risk of Data Loss & Wear:</strong> Paper records deteriorate, take up significant storage space, and cannot be backed up securely in the cloud.</li>
+    <li><strong>Vulnerability to Clinical Oversights:</strong> Manual methods can miss minimum donation cooldown periods (90 days for males and 120 days for females) or fail to flag expiring blood bags in time.</li>
+    <li><strong>Lack of Role-Based Security:</strong> Paper logs lack password encryption, access control checks, or tamper-proof audit trails for inventory adjustments.</li>
+  </ol>
+</div>
+
+<!-- PAGE 9: PROPOSED SYSTEM -->
+<div class="page">
+  <h1>2. Proposed System</h1>
+  <p>The proposed web application replaces manual logging with a secure, centralized portal. Designed around the public health standards of <strong>e-RaktKosh</strong>, it automates live inventory updates, donation intervals, and medical requisitions.</p>
+  <ul>
+    <li><strong>Live Inventory Tracking:</strong> Displays cleared, unexpired blood bags across all major blood types (A+, A-, B+, B-, AB+, AB-, O+, O-) as well as rare groups like the Bombay Phenotype.</li>
+    <li><strong>Barcoded Unit/Batch Identification:</strong> Tracks individual bags using unique serial barcodes (<code>unit_barcode</code>), recording bag capacity (350ml or 450ml), mandatory screening clearance (HIV, Hepatitis B/C, Malaria, Syphilis), and shelf-life expiration dates.</li>
+    <li><strong>Algorithmic Cooldown Engine:</strong> Enforces gender-based clinical recovery intervals (90 days for male donors, 120 days for female donors) before allowing donation scheduling.</li>
+    <li><strong>Digital Donor Identification:</strong> Generates a unique, trackable donor certificate reference (<code>CERT-RCS-XXXXXX</code>) for verified donors.</li>
+    <li><strong>Multi-Stage Hospital Requisition Pipeline:</strong> Moves patient requests systematically across clinical stages: Pending &rarr; Cross-Match Verified &rarr; Approved / Issued &rarr; Fulfilled / Rejected.</li>
+    <li><strong>Role-Based Access Control (RBAC):</strong> Restricts administrative functions (such as stock issuance and workflow changes) to authorized staff via encrypted login credentials.</li>
+  </ul>
+</div>
+
+<!-- PAGE 10: PROJECT PROFILE -->
+<div class="page">
+  <h1>2.1 Project Profile</h1>
+  <br>
+  <table>
+    <tr><th>Attribute</th><th>Project Specification</th></tr>
+    <tr><td><strong>Project Title</strong></td><td>Red Cross Society — Blood Donation Management System</td></tr>
+    <tr><td><strong>Academic Program</strong></td><td>Bachelor of Computer Applications (B.C.A.) – Semester 5</td></tr>
+    <tr><td><strong>Course / Subject</strong></td><td>Web Frameworks & Services (WFS)</td></tr>
+    <tr><td><strong>System Architecture</strong></td><td>Model-View-Controller (MVC)</td></tr>
+    <tr><td><strong>Backend Framework</strong></td><td>Laravel 12 (Core PHP 8.2+)</td></tr>
+    <tr><td><strong>Frontend Technologies</strong></td><td>Blade Engine, HTML5, CSS3, JavaScript, Bootstrap 5.3</td></tr>
+    <tr><td><strong>Database Server</strong></td><td>MySQL via phpMyAdmin (XAMPP Environment)</td></tr>
+    <tr><td><strong>Web Server Environment</strong></td><td>Apache HTTP Server 2.4 (Configured Port 8080)</td></tr>
+    <tr><td><strong>Security Standards</strong></td><td>Bcrypt Password Hashing, Session Regeneration, RBAC Middleware</td></tr>
+    <tr><td><strong>Target User Groups</strong></td><td>Public Donors, Hospital Transfusion Units, Blood Bank Admins</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 11: OBJECTIVES -->
+<div class="page">
+  <h1>2.2 Objectives</h1>
+  <ol>
+    <li><strong>Digitize Blood Bank Records:</strong> Replace paper logs with structured MySQL relational tables for inventory, donor history, and requisitions.</li>
+    <li><strong>Provide Real-Time Public Stock Visibility:</strong> Offer an accessible search interface where hospital staff and attendants can filter blood units by group, component, and district.</li>
+    <li><strong>Enforce Clinical Safety Standards:</strong> Implement automated server-side checks for age (18–65), vital metrics, and mandatory post-donation cooldown intervals.</li>
+    <li><strong>Streamline Emergency Requests:</strong> Enable hospital attendants to submit digital blood requisitions, reducing the need for physical travel during emergency cross-matching.</li>
+    <li><strong>Secure Administrative Functions:</strong> Use dedicated middleware to restrict inventory approvals, state transitions, and drive scheduling to authorized medical officers.</li>
+  </ol>
+</div>
+
+<!-- PAGE 12: REQUIREMENTS -->
+<div class="page">
+  <h1>2.3 Hardware and Software Requirements</h1>
+  <h2>Hardware Requirements</h2>
+  <ul>
+    <li><strong>CPU:</strong> Dual-core 2.0 GHz or higher (Intel Core i3/i5 or AMD Ryzen 3/5 equivalent)</li>
+    <li><strong>RAM:</strong> Minimum 4 GB (8 GB recommended for simultaneous server hosting)</li>
+    <li><strong>Hard Disk Storage:</strong> Minimum 500 MB free local disk space</li>
+    <li><strong>Display:</strong> 13-inch or higher screen with a minimum resolution of 1366 x 768</li>
+  </ul>
+  <h2>Software Requirements</h2>
+  <ul>
+    <li><strong>Operating System:</strong> Windows 10 / Windows 11 (64-bit)</li>
+    <li><strong>Local Web Server:</strong> Apache 2.4 (via XAMPP suite)</li>
+    <li><strong>Database Management System:</strong> phpMyAdmin / MySQL 8.0+</li>
+    <li><strong>Programming Environment:</strong> PHP 8.2.12 or higher</li>
+    <li><strong>Framework Engine:</strong> Laravel 12.x</li>
+    <li><strong>IDE / Development Editor:</strong> Visual Studio Code</li>
+    <li><strong>Web Browser:</strong> Google Chrome / Mozilla Firefox</li>
+  </ul>
+</div>
+
+<!-- PAGE 13: SYSTEM LEVEL DIAGRAM -->
+<div class="page">
+  <h1>3. System Design</h1>
+  <h2>3.1 System Level Diagram (SLD)</h2>
+  <pre>
+=============================================================================
+                              USER INTERACTION LAYER
+      [ Public Visitors ]    [ Registered Donors ]    [ Authorized Admins ]
+=============================================================================
+                                      |
+                                      v (HTTP / HTTPS Requests)
+=============================================================================
+                       FRONTEND PRESENTATION LAYER
+              Blade Template Engine & Responsive Bootstrap 5.3
+  * Live Stock Counters       * Real-Time Stock Directory Search
+  * Donor Registration Form   * Emergency Requisition Form
+  * Officer Login Page        * Administrative Clinical Dashboard
+=============================================================================
+                                      |
+                                      v (Routes / Session Controllers)
+=============================================================================
+                      APPLICATION BUSINESS LOGIC LAYER
+                         Laravel 12 MVC Framework
+  [ Controllers ]
+    - PublicController.php (Directory query, donor intake, requisitions)
+    - AdminController.php  (Workflow state updates, inventory allocation)
+    - AuthController.php   (Authentication, session management, logout)
+  [ Security & Middleware ]
+    - AdminMiddleware.php  (Guards administrative routes: role === 'admin')
+    - CSRF Protection & Input Sanitization Validation Rules
+=============================================================================
+                                      |
+                                      v (Eloquent ORM & PDO Connections)
+=============================================================================
+                            DATABASE DATA LAYER
+                        MySQL Engine via phpMyAdmin
+  * users               * blood_banks            * blood_batches
+  * donors              * donor_screenings       * camps
+  * blood_requisitions
+=============================================================================
+  </pre>
+</div>
+
+<!-- PAGE 14: DATA FLOW DIAGRAMS -->
+<div class="page">
+  <h1>3.2 Data Flow Diagrams (DFD)</h1>
+  <h2>Context Level Diagram (DFD Level 0)</h2>
+  <pre>
+                     +----------------------------+
+                     |   Voluntary Blood Donor    |
+                     +----------------------------+
+                       /                        ^
+                      /                          \\
+         Donor Intake/                            \\ Digital Donor
+         Cooldown Data                             \\ Certificate Number
+                    v                               \\
+            +-----------------------------------------------+
+            |                                               |
+            |                     0.0                       |
+            |             RED CROSS SOCIETY                 |
+            |          BLOOD DONATION MANAGEMENT            |
+            |                    SYSTEM                     |
+            |                                               |
+            +-----------------------------------------------+
+                    ^                               \\
+                   /                                 \\
+  Emergency Blood /                                   \\ Real-Time Stock
+  Requisition Data                                     \\ & Camp Information
+                 /                                      v
+    +---------------------------+             +---------------------------+
+    |   Hospital / Attendant    |             | Transfusion Administrator |
+    +---------------------------+             +---------------------------+
+  </pre>
+</div>
+
+<!-- PAGE 15: DFD LEVEL 1 & FLOWCHART -->
+<div class="page">
+  <h2>DFD Level 1 (Detailed Subsystem Data Flow)</h2>
+  <pre>
+[ DONOR ] 
+    |---> Enters Profile, Gender, and Last Donation Date
+    v
+( 1.0 Donor Cooldown Evaluation Engine )
+    |---> Calculates gender interval (Male: 90 days / Female: 120 days)
+    |---> Writes verified record to [ donors ] table
+    |---> Issues unique certificate identifier: CERT-RCS-XXXXXX
+
+[ HOSPITAL RECIPIENT ]
+    |---> Submits Patient Vitals, Diagnosis, Group, and Urgency
+    v
+( 2.0 Requisition Intake Subsystem )
+    |---> Assigns initial workflow status: 'Pending'
+    |---> Writes new record to [ blood_requisitions ] table
+
+[ GENERAL PUBLIC ]
+    |---> Selects Blood Group, Component, and District filters
+    v
+( 3.0 Live Inventory Search Engine )
+    |---> Reads verified, unexpired units from [ blood_batches ] table
+    |---> Renders dynamic availability table with unique barcodes
+
+[ TRANSFUSION ADMIN ]
+    |---> Enters email and password credentials
+    v
+( 4.0 Authentication & Session Middleware )
+    |---> Checks credentials and role against [ users ] table
+    |---> Grants access to the administrative control panel
+    v
+( 5.0 Clinical Workflow Management )
+    |---> Updates status: 'Pending' -> 'Approved / Issued'
+    |---> Automatically deducts matching units in [ blood_batches ] table
+    |---> Records changes in [ blood_requisitions ] table
+  </pre>
+</div>
+
+<!-- PAGE 16: DATA DICTIONARY 1 -->
+<div class="page">
+  <h1>3.3 Data Dictionary</h1>
+  <h2>Table 1: users (Authentication & Role Credentials)</h2>
+  <table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Description</th></tr>
+    <tr><td>id</td><td>BIGINT UNSIGNED</td><td>No</td><td>PK</td><td>Auto-increment primary key</td></tr>
+    <tr><td>name</td><td>VARCHAR(255)</td><td>No</td><td>-</td><td>Full name of registered user or staff officer</td></tr>
+    <tr><td>email</td><td>VARCHAR(255)</td><td>No</td><td>UNI</td><td>Login email address</td></tr>
+    <tr><td>phone</td><td>VARCHAR(20)</td><td>Yes</td><td>-</td><td>10-digit mobile number</td></tr>
+    <tr><td>password</td><td>VARCHAR(255)</td><td>No</td><td>-</td><td>Bcrypt-hashed password string</td></tr>
+    <tr><td>role</td><td>ENUM</td><td>No</td><td>-</td><td>'admin', 'donor', 'hospital' (Default: 'donor')</td></tr>
+    <tr><td>remember_token</td><td>VARCHAR(100)</td><td>Yes</td><td>-</td><td>Persistent login token string</td></tr>
+    <tr><td>created_at / updated_at</td><td>TIMESTAMP</td><td>Yes</td><td>-</td><td>Standard timestamps</td></tr>
+  </table>
+
+  <h2>Table 2: blood_banks (Regional Facility Directory)</h2>
+  <table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Description</th></tr>
+    <tr><td>id</td><td>BIGINT UNSIGNED</td><td>No</td><td>PK</td><td>Primary key</td></tr>
+    <tr><td>name</td><td>VARCHAR(255)</td><td>No</td><td>-</td><td>Official blood bank name</td></tr>
+    <tr><td>license_number</td><td>VARCHAR(100)</td><td>No</td><td>UNI</td><td>Drug control license number</td></tr>
+    <tr><td>category</td><td>ENUM</td><td>No</td><td>-</td><td>'Govt', 'Red Cross', 'Charitable', 'Private'</td></tr>
+    <tr><td>district / city_taluka</td><td>VARCHAR(100)</td><td>No</td><td>-</td><td>Territorial jurisdiction</td></tr>
+    <tr><td>pincode</td><td>VARCHAR(10)</td><td>No</td><td>-</td><td>6-digit postal code</td></tr>
+    <tr><td>contact_person / helpline_phone</td><td>VARCHAR</td><td>No</td><td>-</td><td>Nodal contact credentials</td></tr>
+    <tr><td>has_component_facility</td><td>TINYINT(1)</td><td>No</td><td>-</td><td>Component separation capacity flag</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 17: DATA DICTIONARY 2 -->
+<div class="page">
+  <h2>Table 3: blood_batches (Individual Unit Barcode Inventory)</h2>
+  <table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Description</th></tr>
+    <tr><td>id</td><td>BIGINT UNSIGNED</td><td>No</td><td>PK</td><td>Primary key</td></tr>
+    <tr><td>blood_bank_id</td><td>BIGINT UNSIGNED</td><td>No</td><td>FK</td><td>References blood_banks(id)</td></tr>
+    <tr><td>unit_barcode</td><td>VARCHAR(100)</td><td>No</td><td>UNI</td><td>Unique unit barcode (e.g., 'RCS-1001')</td></tr>
+    <tr><td>blood_group</td><td>ENUM</td><td>No</td><td>-</td><td>A+, A-, B+, B-, AB+, AB-, O+, O-, Bombay Phenotype</td></tr>
+    <tr><td>component</td><td>ENUM</td><td>No</td><td>-</td><td>'Whole Blood', 'PRBC', 'FFP', 'Platelet Concentrate'</td></tr>
+    <tr><td>bag_volume</td><td>ENUM</td><td>No</td><td>-</td><td>'350ml', '450ml'</td></tr>
+    <tr><td>collection_date / expiry_date</td><td>DATE</td><td>No</td><td>-</td><td>Shelf-life lifecycle dates</td></tr>
+    <tr><td>testing_clearance_status</td><td>ENUM</td><td>No</td><td>-</td><td>'Pending', 'Cleared', 'Failed'</td></tr>
+    <tr><td>status</td><td>ENUM</td><td>No</td><td>-</td><td>'Available', 'Reserved', 'Issued', 'Discarded'</td></tr>
+  </table>
+
+  <h2>Table 4: donors (Registered Donors & Intervals)</h2>
+  <table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Description</th></tr>
+    <tr><td>id</td><td>BIGINT UNSIGNED</td><td>No</td><td>PK</td><td>Primary key</td></tr>
+    <tr><td>user_id</td><td>BIGINT UNSIGNED</td><td>Yes</td><td>FK</td><td>References users(id)</td></tr>
+    <tr><td>full_name</td><td>VARCHAR(100)</td><td>No</td><td>-</td><td>Full legal name</td></tr>
+    <tr><td>gender</td><td>ENUM</td><td>No</td><td>-</td><td>'Male', 'Female', 'Other'</td></tr>
+    <tr><td>dob</td><td>DATE</td><td>No</td><td>-</td><td>Date of birth (18-65 years)</td></tr>
+    <tr><td>phone</td><td>VARCHAR(15)</td><td>No</td><td>-</td><td>10-digit mobile number</td></tr>
+    <tr><td>blood_group</td><td>ENUM</td><td>No</td><td>-</td><td>Donor blood group</td></tr>
+    <tr><td>last_donation_date</td><td>DATE</td><td>Yes</td><td>-</td><td>Most recent donation date</td></tr>
+    <tr><td>is_eligible</td><td>TINYINT(1)</td><td>No</td><td>-</td><td>Cooldown eligibility status</td></tr>
+    <tr><td>certificate_number</td><td>VARCHAR(100)</td><td>Yes</td><td>UNI</td><td>Unique certificate reference</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 18: DATA DICTIONARY 3 -->
+<div class="page">
+  <h2>Table 5: donor_screenings (Clinical Mini-Physical Evaluations)</h2>
+  <table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Description</th></tr>
+    <tr><td>id</td><td>BIGINT UNSIGNED</td><td>No</td><td>PK</td><td>Primary key</td></tr>
+    <tr><td>donor_id</td><td>BIGINT UNSIGNED</td><td>No</td><td>FK</td><td>References donors(id)</td></tr>
+    <tr><td>weight_kg</td><td>DECIMAL(5,2)</td><td>No</td><td>-</td><td>Body weight (Requirement: >= 45.0 kg)</td></tr>
+    <tr><td>hemoglobin_g_dl</td><td>DECIMAL(4,1)</td><td>No</td><td>-</td><td>Hb level (Requirement: >= 12.5 g/dL)</td></tr>
+    <tr><td>pulse_rate</td><td>INT</td><td>No</td><td>-</td><td>Measured pulse rate (60 - 100 bpm)</td></tr>
+    <tr><td>blood_pressure</td><td>VARCHAR(20)</td><td>No</td><td>-</td><td>Measured BP reading (e.g. '120/80')</td></tr>
+    <tr><td>screening_result</td><td>ENUM</td><td>No</td><td>-</td><td>'Fit', 'Temporary Deferral', 'Permanent Deferral'</td></tr>
+  </table>
+
+  <h2>Table 6: camps (Blood Donation Drives)</h2>
+  <table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Description</th></tr>
+    <tr><td>id</td><td>BIGINT UNSIGNED</td><td>No</td><td>PK</td><td>Primary key</td></tr>
+    <tr><td>camp_title</td><td>VARCHAR(255)</td><td>No</td><td>-</td><td>Official title of the drive</td></tr>
+    <tr><td>organizing_institution</td><td>VARCHAR(255)</td><td>No</td><td>-</td><td>Partner NGO / College institution</td></tr>
+    <tr><td>venue_address</td><td>TEXT</td><td>No</td><td>-</td><td>Physical venue location</td></tr>
+    <tr><td>camp_date</td><td>DATE</td><td>No</td><td>-</td><td>Scheduled date</td></tr>
+    <tr><td>start_time / end_time</td><td>TIME</td><td>No</td><td>-</td><td>Operating drive timing</td></tr>
+  </table>
+
+  <h2>Table 7: blood_requisitions (Hospital Emergency Requests)</h2>
+  <table>
+    <tr><th>Column Name</th><th>Data Type</th><th>Null</th><th>Key</th><th>Description</th></tr>
+    <tr><td>id</td><td>BIGINT UNSIGNED</td><td>No</td><td>PK</td><td>Primary key</td></tr>
+    <tr><td>patient_name / age</td><td>VARCHAR / INT</td><td>No</td><td>-</td><td>Patient credentials</td></tr>
+    <tr><td>admitted_hospital</td><td>VARCHAR(255)</td><td>No</td><td>-</td><td>Receiving hospital facility</td></tr>
+    <tr><td>blood_group / component</td><td>ENUM</td><td>No</td><td>-</td><td>Required transfusion unit</td></tr>
+    <tr><td>units_required</td><td>INT</td><td>No</td><td>-</td><td>Quantity of units requested</td></tr>
+    <tr><td>urgency_level</td><td>ENUM</td><td>No</td><td>-</td><td>'Elective', 'Emergency', 'SOS'</td></tr>
+    <tr><td>workflow_state</td><td>ENUM</td><td>No</td><td>-</td><td>'Pending', 'Cross-Match Verified', 'Approved / Issued'</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 19: SQL SCHEMA 1 -->
+<div class="page">
+  <h1>3.4 Database Table Structures (phpMyAdmin / MySQL Schema)</h1>
+  <h2>Table: users</h2>
+  <pre>
+CREATE TABLE \`users\` (
+  \`id\` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  \`name\` varchar(255) NOT NULL,
+  \`email\` varchar(255) NOT NULL UNIQUE,
+  \`phone\` varchar(20) DEFAULT NULL,
+  \`password\` varchar(255) NOT NULL,
+  \`role\` enum('admin','donor','hospital') NOT NULL DEFAULT 'donor',
+  \`remember_token\` varchar(100) DEFAULT NULL,
+  \`created_at\` timestamp NULL DEFAULT NULL,
+  \`updated_at\` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (\`id\`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  </pre>
+  <h2>Table: blood_banks</h2>
+  <pre>
+CREATE TABLE \`blood_banks\` (
+  \`id\` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  \`name\` varchar(255) NOT NULL,
+  \`license_number\` varchar(100) NOT NULL UNIQUE,
+  \`category\` enum('Govt','Red Cross','Charitable','Private') NOT NULL DEFAULT 'Red Cross',
+  \`parent_hospital_name\` varchar(255) DEFAULT NULL,
+  \`state\` varchar(100) NOT NULL DEFAULT 'Gujarat',
+  \`district\` varchar(100) NOT NULL,
+  \`city_taluka\` varchar(100) NOT NULL,
+  \`pincode\` varchar(10) NOT NULL,
+  \`latitude\` decimal(10,7) DEFAULT NULL,
+  \`longitude\` decimal(10,7) DEFAULT NULL,
+  \`contact_person\` varchar(255) NOT NULL,
+  \`helpline_phone\` varchar(50) NOT NULL,
+  \`operating_hours\` varchar(100) NOT NULL DEFAULT '24/7',
+  \`has_component_facility\` tinyint(1) NOT NULL DEFAULT 1,
+  \`has_prbc\` tinyint(1) NOT NULL DEFAULT 1,
+  \`has_ffp\` tinyint(1) NOT NULL DEFAULT 1,
+  \`has_platelets\` tinyint(1) NOT NULL DEFAULT 1,
+  \`has_cryoprecipitate\` tinyint(1) NOT NULL DEFAULT 0,
+  \`created_at\` timestamp NULL DEFAULT NULL,
+  \`updated_at\` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (\`id\`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  </pre>
+</div>
+
+<!-- PAGE 20: SQL SCHEMA 2 -->
+<div class="page">
+  <h2>Table: blood_batches</h2>
+  <pre>
+CREATE TABLE \`blood_batches\` (
+  \`id\` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  \`blood_bank_id\` bigint(20) UNSIGNED NOT NULL,
+  \`unit_barcode\` varchar(100) NOT NULL UNIQUE,
+  \`blood_group\` enum('A+','A-','B+','B-','AB+','AB-','O+','O-','Bombay Phenotype') NOT NULL,
+  \`component\` enum('Whole Blood','PRBC','FFP','Platelet Concentrate','Cryoprecipitate') NOT NULL,
+  \`bag_volume\` enum('350ml','450ml') NOT NULL DEFAULT '350ml',
+  \`collection_date\` date NOT NULL,
+  \`expiry_date\` date NOT NULL,
+  \`testing_clearance_status\` enum('Pending','Cleared','Failed') NOT NULL DEFAULT 'Pending',
+  \`status\` enum('Available','Reserved','Issued','Discarded') NOT NULL DEFAULT 'Available',
+  \`created_at\` timestamp NULL DEFAULT NULL,
+  \`updated_at\` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (\`id\`),
+  KEY \`blood_batches_blood_bank_id_foreign\` (\`blood_bank_id\`),
+  CONSTRAINT \`blood_batches_blood_bank_id_foreign\` 
+    FOREIGN KEY (\`blood_bank_id\`) REFERENCES \`blood_banks\` (\`id\`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  </pre>
+  <h2>Table: donors</h2>
+  <pre>
+CREATE TABLE \`donors\` (
+  \`id\` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  \`user_id\` bigint(20) UNSIGNED DEFAULT NULL,
+  \`full_name\` varchar(100) NOT NULL,
+  \`gender\` enum('Male','Female','Other') NOT NULL,
+  \`dob\` date NOT NULL,
+  \`phone\` varchar(15) NOT NULL,
+  \`email\` varchar(255) DEFAULT NULL,
+  \`national_id_hash\` varchar(255) DEFAULT NULL,
+  \`address\` text NOT NULL,
+  \`state\` varchar(100) NOT NULL DEFAULT 'Gujarat',
+  \`district\` varchar(100) NOT NULL,
+  \`city_taluka\` varchar(100) NOT NULL,
+  \`pincode\` varchar(10) NOT NULL,
+  \`blood_group\` enum('A+','A-','B+','B-','AB+','AB-','O+','O-','Bombay Phenotype') NOT NULL,
+  \`last_donation_date\` date DEFAULT NULL,
+  \`donation_type\` enum('Voluntary','Replacement','Apheresis') NOT NULL DEFAULT 'Voluntary',
+  \`is_eligible\` tinyint(1) NOT NULL DEFAULT 1,
+  \`certificate_number\` varchar(100) DEFAULT NULL UNIQUE,
+  \`created_at\` timestamp NULL DEFAULT NULL,
+  \`updated_at\` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (\`id\`),
+  KEY \`donors_user_id_foreign\` (\`user_id\`),
+  CONSTRAINT \`donors_user_id_foreign\` 
+    FOREIGN KEY (\`user_id\`) REFERENCES \`users\` (\`id\`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  </pre>
+</div>
+
+<!-- PAGE 21: SQL SCHEMA 3 -->
+<div class="page">
+  <h2>Table: donor_screenings</h2>
+  <pre>
+CREATE TABLE \`donor_screenings\` (
+  \`id\` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  \`donor_id\` bigint(20) UNSIGNED NOT NULL,
+  \`blood_bank_id\` bigint(20) UNSIGNED NOT NULL,
+  \`weight_kg\` decimal(5,2) NOT NULL,
+  \`hemoglobin_g_dl\` decimal(4,1) NOT NULL,
+  \`pulse_rate\` int(11) NOT NULL,
+  \`blood_pressure\` varchar(20) NOT NULL,
+  \`screening_result\` enum('Fit','Temporary Deferral','Permanent Deferral') NOT NULL,
+  \`deferral_reason\` text DEFAULT NULL,
+  \`deferral_until\` date DEFAULT NULL,
+  \`screened_by_officer\` varchar(255) NOT NULL,
+  \`created_at\` timestamp NULL DEFAULT NULL,
+  \`updated_at\` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (\`id\`),
+  KEY \`donor_screenings_donor_id_foreign\` (\`donor_id\`),
+  KEY \`donor_screenings_blood_bank_id_foreign\` (\`blood_bank_id\`),
+  CONSTRAINT \`donor_screenings_donor_id_foreign\` 
+    FOREIGN KEY (\`donor_id\`) REFERENCES \`donors\` (\`id\`) ON DELETE CASCADE,
+  CONSTRAINT \`donor_screenings_blood_bank_id_foreign\` 
+    FOREIGN KEY (\`blood_bank_id\`) REFERENCES \`blood_banks\` (\`id\`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  </pre>
+  <h2>Table: camps</h2>
+  <pre>
+CREATE TABLE \`camps\` (
+  \`id\` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  \`blood_bank_id\` bigint(20) UNSIGNED NOT NULL,
+  \`camp_title\` varchar(255) NOT NULL,
+  \`organizing_institution\` varchar(255) NOT NULL,
+  \`venue_address\` text NOT NULL,
+  \`state\` varchar(100) NOT NULL DEFAULT 'Gujarat',
+  \`district\` varchar(100) NOT NULL,
+  \`city_taluka\` varchar(100) NOT NULL,
+  \`camp_date\` date NOT NULL,
+  \`start_time\` time NOT NULL,
+  \`end_time\` time NOT NULL,
+  \`expected_registrations\` int(11) NOT NULL DEFAULT 50,
+  \`nodal_officer_contact\` varchar(50) NOT NULL,
+  \`created_at\` timestamp NULL DEFAULT NULL,
+  \`updated_at\` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (\`id\`),
+  KEY \`camps_blood_bank_id_foreign\` (\`blood_bank_id\`),
+  CONSTRAINT \`camps_blood_bank_id_foreign\` 
+    FOREIGN KEY (\`blood_bank_id\`) REFERENCES \`blood_banks\` (\`id\`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  </pre>
+</div>
+
+<!-- PAGE 22: SQL SCHEMA 4 -->
+<div class="page">
+  <h2>Table: blood_requisitions</h2>
+  <pre>
+CREATE TABLE \`blood_requisitions\` (
+  \`id\` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  \`blood_bank_id\` bigint(20) UNSIGNED DEFAULT NULL,
+  \`patient_name\` varchar(100) NOT NULL,
+  \`age\` int(11) NOT NULL,
+  \`admitted_hospital\` varchar(255) NOT NULL,
+  \`treating_doctor\` varchar(255) NOT NULL,
+  \`diagnosis_indication\` varchar(255) NOT NULL,
+  \`attendant_contact\` varchar(15) NOT NULL,
+  \`blood_group\` enum('A+','A-','B+','B-','AB+','AB-','O+','O-','Bombay Phenotype') NOT NULL,
+  \`component\` enum('Whole Blood','PRBC','FFP','Platelet Concentrate','Cryoprecipitate') NOT NULL,
+  \`units_required\` int(11) NOT NULL DEFAULT 1,
+  \`urgency_level\` enum('Elective','Emergency','SOS') NOT NULL DEFAULT 'Emergency',
+  \`workflow_state\` enum('Pending','Cross-Match Verified','Approved / Issued','Fulfilled','Rejected') NOT NULL DEFAULT 'Pending',
+  \`clinical_remarks\` text DEFAULT NULL,
+  \`created_at\` timestamp NULL DEFAULT NULL,
+  \`updated_at\` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (\`id\`),
+  KEY \`blood_requisitions_blood_bank_id_foreign\` (\`blood_bank_id\`),
+  CONSTRAINT \`blood_requisitions_blood_bank_id_foreign\` 
+    FOREIGN KEY (\`blood_bank_id\`) REFERENCES \`blood_banks\` (\`id\`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  </pre>
+</div>
+
+<!-- PAGE 23: SCREEN LAYOUTS -->
+<div class="page">
+  <h1>4. Screen Layouts</h1>
+  <h2>4.1 Navigation & Responsive Design</h2>
+  <p>The application's user interface is built with responsive Bootstrap 5.3 components and custom CSS variables representing official Red Cross branding:</p>
+  <ul>
+    <li><strong>Primary Crimson Red (#c8102e):</strong> Used for navigation headers, key action buttons, and blood group badges.</li>
+    <li><strong>Charcoal Slate (#212529):</strong> Used for footer sections, table headers, and navigation bars.</li>
+    <li><strong>Soft Light Grey (#f8f9fa):</strong> Used as the primary background color for clarity and high contrast.</li>
+  </ul>
+  <pre>
++-----------------------------------------------------------------------------+
+| [+] RED CROSS SOCIETY Transfusion Services           Helpline: 104 / 1910   |
++-----------------------------------------------------------------------------+
+| [Home]   [Stock Availability]   [Donor Portal]   [Blood Requisition]        |
+|                                                      [Officer Login]        |
++-----------------------------------------------------------------------------+
+  </pre>
+</div>
+
+<!-- PAGE 24: HOME SCREEN -->
+<div class="page">
+  <h2>4.2 Public Home Page Layout (/)</h2>
+  <pre>
++-----------------------------------------------------------------------------+
+|                                                                             |
+|   RED CROSS SOCIETY TRANSFUSION SERVICES                                    |
+|   Real-Time Regional Blood Availability & Component Registry                |
+|                                                                             |
+|   [ Check Live Stock ]     [ Emergency Requisition ]    [ Register Donor ]  |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+LIVE COMPONENT STOCK SUMMARY
++-----------------+ +-----------------+ +-----------------+ +-----------------+
+| A+              | | B+              | | O+              | | AB+             |
+| Packed Cells    | | Whole Blood     | | Platelets       | | Plasma (FFP)    |
+| 18 Units        | | 24 Units        | | 9 Units         | | 14 Units        |
++-----------------+ +-----------------+ +-----------------+ +-----------------+
+
+UPCOMING BLOOD DONATION CAMPS
++-----------------------------------------------------------------------------+
+| Navsari Youth Red Cross Mega Camp                 Date: 24 Oct 2026         |
+| Organized by: Navsari Youth Red Cross & Lions Club                          |
+| Venue: Central Hall, Lunsikui Grounds, Navsari (09:00 AM - 04:00 PM)        |
+| Coordinator Contact: +91 98250 12345                                        |
++-----------------------------------------------------------------------------+
+| Surat Industrial Transfusion Drive                Date: 28 Oct 2026         |
+| Organized by: Rotary Club of Surat Midtown                                  |
+| Venue: Community Center, Ring Road, Surat (10:00 AM - 05:00 PM)             |
+| Coordinator Contact: +91 98790 54321                                        |
++-----------------------------------------------------------------------------+
+  </pre>
+</div>
+
+<!-- PAGE 25: STOCK DIRECTORY SCREEN -->
+<div class="page">
+  <h2>4.3 Live Stock Availability Directory (/stock-directory)</h2>
+  <pre>
++-----------------------------------------------------------------------------+
+| e-RaktKosh Live Stock Availability Finder                                   |
+|                                                                             |
+| Blood Group:          Component:                 District:                  |
+| [ B+              v]  [ PRBC (Packed Cells) v]   [ Navsari             ]   |
+|                                                                             |
+|                                                         [ Search Stock ]    |
++-----------------------------------------------------------------------------+
+
+SEARCH RESULTS (SHOWING CLEARED UNITS IN INVENTORY)
++------------+------------------------+-------+---------+--------+------------+
+| Barcode #  | Blood Bank Center      | Group | Comp.   | Vol.   | Expiry     |
++------------+------------------------+-------+---------+--------+------------+
+| RCS-1014   | Red Cross Center, Nav. | B+    | PRBC    | 450ml  | 28 Nov 2026|
+| RCS-1015   | Red Cross Center, Nav. | B+    | PRBC    | 450ml  | 28 Nov 2026|
+| RCS-1022   | Civil Transfusion Ctr  | B+    | PRBC    | 350ml  | 02 Dec 2026|
++------------+------------------------+-------+---------+--------+------------+
+  </pre>
+</div>
+
+<!-- PAGE 26: DONOR REGISTRATION SCREEN -->
+<div class="page">
+  <h2>4.4 Voluntary Donor Registration Interface (/register-donor)</h2>
+  <pre>
++-----------------------------------------------------------------------------+
+| Voluntary Donor Registration Portal                                         |
+| NBTC Regulatory Eligibility Guidelines Compliant                            |
++-----------------------------------------------------------------------------+
+| 1. Personal & Contact Information                                           |
+| Full Name:      [ Amit R. Sharma                                          ] |
+| Gender:         [ Male (90 days cooldown)                                v] |
+| Date of Birth:  [ 15/08/2002  ] (Age: 24 yrs)                               |
+| Mobile No:      [ 9825123456  ]   Email: [ amit.sharma@example.com        ] |
++-----------------------------------------------------------------------------+
+| 2. Residential Address                                                      |
+| Street Address: [ Flat 402, Shanti Heights, Station Road                  ] |
+| District:       [ Navsari     ]   City/Taluka: [ Navsari                  ] |
+| Pincode:        [ 396445      ]                                             |
++-----------------------------------------------------------------------------+
+| 3. Donation History & Category                                              |
+| Blood Group:    [ O+          v]  Donation Type: [ Voluntary             v] |
+| Last Donated:   [ 12/04/2026  ]                                             |
++-----------------------------------------------------------------------------+
+| [i] Minimum Weight: 45 kg | Minimum Hemoglobin: 12.5 g/dL                   |
+|                                                                             |
+|                                                [ Complete Registration ]    |
++-----------------------------------------------------------------------------+
+  </pre>
+</div>
+
+<!-- PAGE 27: EMERGENCY REQUISITION SCREEN -->
+<div class="page">
+  <h2>4.5 Emergency Blood Requisition Form (/request-blood)</h2>
+  <pre>
++-----------------------------------------------------------------------------+
+| Emergency Patient Blood Requisition Form                                    |
+| Real-Time Clinical Request Submission                                       |
++-----------------------------------------------------------------------------+
+| 1. Patient & Medical Center Details                                         |
+| Patient Name:     [ Smt. Rekhaben Patel                                   ] |
+| Patient Age:      [ 54        ]                                             |
+| Admitted Hospital:[ Civil General Hospital, Navsari                       ] |
+| Treating Doctor:  [ Dr. K. M. Desai                                       ] |
+| Diagnosis:        [ Emergency Orthopedic Trauma Surgery                   ] |
+| Attendant Mobile: [ 9012345678                                            ] |
++-----------------------------------------------------------------------------+
+| 2. Required Component Specification                                         |
+| Blood Group:      [ A+                    v]                                |
+| Component Type:   [ PRBC (Packed Red Cells)v]                               |
+| Units Required:   [ 2                     v]                                |
+| Urgency Tier:     [ SOS / Life-Threatening (Immediate)                    v] |
+| Target Blood Bank:[ Red Cross Regional Transfusion Center (Navsari)       v] |
++-----------------------------------------------------------------------------+
+|                                                                             |
+|                                           [ Submit Requisition Order ]      |
++-----------------------------------------------------------------------------+
+  </pre>
+</div>
+
+<!-- PAGE 28: OFFICER LOGIN SCREEN -->
+<div class="page">
+  <h2>4.6 Officer Authentication Interface (/login)</h2>
+  <pre>
++-----------------------------------------------------------------------------+
+|                                                                             |
+|                       OFFICER LOGIN                                         |
+|             Red Cross Society Central Transfusion Portal                    |
+|                                                                             |
+|         Email Address:                                                      |
+|         [ admin@redcross.org                                       ]        |
+|                                                                             |
+|         Password:                                                           |
+|         [ ******************                                       ]        |
+|                                                                             |
+|         [ Sign In to Admin Center ]                                         |
+|                                                                             |
++-----------------------------------------------------------------------------+
+  </pre>
+</div>
+
+<!-- PAGE 29: ADMIN DASHBOARD SCREEN -->
+<div class="page">
+  <h2>4.7 Central Admin Dashboard & Workflow Pipeline (/admin/dashboard)</h2>
+  <pre>
++-----------------------------------------------------------------------------+
+| Central Transfusion Administration Panel                  [ System Online ] |
++---------------------+ +---------------------+ +---------------------+-------+
+| Cleared Stock Units | | Pending Requisitions| | Registered Donors   | Camps |
+| 58 Units            | | 3 Requests          | | 42 Donors           | 2 Open|
++---------------------+ +---------------------+ +---------------------+-------+
+
+CLINICAL REQUISITIONS WORKFLOW PIPELINE
++------+---------------+------------------+-----------+---------+-------------+
+| Req# | Patient Info  | Hospital         | Required  | Urgency | Action      |
++------+---------------+------------------+-----------+---------+-------------+
+| #101 | Rekhaben Patel| Civil Hospital   | A+ (PRBC) | SOS     | [Select   v]|
+|      | Age: 54 yrs   | Dr. K. M. Desai  | 2 Units   |         | [Update]    |
++------+---------------+------------------+-----------+---------+-------------+
+| #102 | Jayesh Rana   | Apex Trauma Ctr  | O- (WB)   | Emerg.  | [Select   v]|
+|      | Age: 31 yrs   | Dr. S. N. Joshi  | 1 Unit    |         | [Update]    |
++------+---------------+------------------+-----------+---------+-------------+
+* Workflow States: Pending -> Cross-Match Verified -> Approved/Issued -> Fulfilled
+* Marking 'Approved/Issued' automatically deducts matching units from inventory.
+  </pre>
+</div>
+
+<!-- PAGE 30: FUTURE ENHANCEMENTS -->
+<div class="page">
+  <h1>5. Future Enhancements</h1>
+  <ol>
+    <li><strong>Automated GS1 Barcode Label Generation:</strong> Integrate barcode and QR code label printing for collected blood bags so phlebotomy staff can scan units into inventory using handheld scanners.</li>
+    <li><strong>Automated SMS & WhatsApp Alerts:</strong> Use cloud communication APIs (such as Twilio or Fast2SMS) to notify donors when their cooldown period expires and alert recipients when emergency requests are approved.</li>
+    <li><strong>Interactive Geo-Location Stock Locator:</strong> Integrate OpenStreetMap or Google Maps to help hospital attendants view the nearest blood bank with matching stock and get directions during urgent transfers.</li>
+    <li><strong>Dedicated Cross-Platform Mobile Application:</strong> Build a mobile companion app using Flutter or React Native to let voluntary donors view donation histories and download digital donor cards on their phones.</li>
+    <li><strong>Multi-Language Regional Localization:</strong> Add multilingual support (Gujarati, Hindi, and English) to improve access across regional communities.</li>
+  </ol>
+</div>
+
+<!-- PAGE 31: REFERENCES -->
+<div class="page">
+  <h1>6. References</h1>
+  <ol>
+    <li><strong>e-RaktKosh Portal:</strong> Ministry of Health & Family Welfare (MoHFW), Government of India (<code>https://eraktkosh.mohfw.gov.in</code>).</li>
+    <li><strong>National Blood Transfusion Council (NBTC):</strong> <em>Guidelines for Voluntary Blood Donation & Criteria for Blood Donor Selection</em>, MoHFW, New Delhi.</li>
+    <li><strong>Laravel Documentation (v12.x):</strong> Taylor Otwell, MVC Architecture, Eloquent ORM, Database Migrations & Session Middleware (<code>https://laravel.com/docs</code>).</li>
+    <li><strong>MDN Web Docs:</strong> Mozilla Developer Network, HTML5 Web Standards, CSS Flexbox/Grid, and Form Validation.</li>
+    <li><strong>Bootstrap Documentation (v5.3):</strong> Mark Otto and Jacob Thornton, Responsive Grid Layouts and UI Components.</li>
+    <li><strong>W3Schools Online Web Tutorials:</strong> PHP, MySQL Database Queries, and Apache Server Administration (<code>https://www.w3schools.com</code>).</li>
+  </ol>
+</div>
+
+</body>
+</html>
